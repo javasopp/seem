@@ -1,0 +1,12 @@
+server:
+  address: 127.0.0.1
+  port: 8081
+
+udp:
+  port: 8082
+
+database:
+  host: localhost
+  port: 3306
+  username: user
+  password: secret

@@ -3,6 +3,7 @@ package server
 import (
 	log "github.com/sirupsen/logrus"
 	"net"
+	"seem/conf"
 	"seem/utils"
 	"time"
 )
@@ -20,14 +21,14 @@ func CreatServer() {
 	ip := net.ParseIP(localIp)
 	localAddr := net.UDPAddr{
 		IP:   ip.To4(), //写局域网下分配IP，0.0.0.0可以用来测试
-		Port: 8081,
+		Port: conf.Conf.Server.Port,
 	}
 
 	// 局域网广播地址
 	// 获取这个广播地址之前，先进行获取本机ip地址
 	broadcastAddr := net.UDPAddr{
 		IP:   net.ParseIP(broadcastIp[localIp]).To4(), //局域网广播地址
-		Port: 8082,
+		Port: conf.Conf.Udp.Port,
 	}
 
 	conn, err := net.DialUDP("udp", &localAddr, &broadcastAddr)
