@@ -11,6 +11,8 @@ type Config struct {
 type ServerConfig struct {
 	Address string `yaml:"address"`
 	Port    int    `yaml:"port"`
+	Id      int64  `yaml:"id"`
+	Name    string `yaml:"name"`
 }
 
 type UdpConfig struct {

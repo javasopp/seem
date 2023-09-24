@@ -1,6 +1,9 @@
 server:
   address: 127.0.0.1
   port: 8081
+  # 雪花算法，实现客户端唯一性
+  id: 3308680636360704
+  name: default
 
 udp:
   port: 8082
