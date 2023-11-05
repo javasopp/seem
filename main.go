@@ -1,10 +1,11 @@
 package main
 
 import (
-	"seem/app"
+	"seem/fyne"
 	_ "seem/fyne"
 )
 
 func main() {
-	app.Run()
+	fyne.Run()
+	//app.Run()
 }
